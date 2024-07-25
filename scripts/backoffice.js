@@ -109,6 +109,9 @@ eventForm.addEventListener('submit', function (e) {
     URLToUse = URL
   }
 
+  // LA POST LAVORA SULL'INDIRIZZO NORMALE, "GENERICO" (/agenda)
+  // LA PUT (come la DELETE) LAVORA SULL'INDIRIZZO COMPLETO DI _ID (/agenda/66a249e85f8bd800152f8cde)
+
   // chiamata fetch() per fare una POST del concerto appena compilato
   // per fare una chiamata POST, l'URL è lo stesso della chiamata GET
   // ...se l'API è stata costruita secondo i principi REST
