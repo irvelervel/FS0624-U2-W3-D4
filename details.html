@@ -10,6 +10,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .fit-content {
+        width: fit-content;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -30,10 +35,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
+                <a class="nav-link" aria-current="page" href="./index.html"
                   >Home</a
                 >
               </li>
@@ -64,14 +66,11 @@
     <main class="mt-3">
       <div class="text-center">
         <h1>EpiTicketOne</h1>
-        <h3>Compra qua i tuoi biglietti!</h3>
+        <h3>Dettagli concerto</h3>
       </div>
       <div class="container mt-5">
-        <div
-          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
-          id="events-row"
-        >
-          <!-- qui dentro finiranno le col con gli eventi presenti a DB -->
+        <div class="row justify-content-center" id="detail-row">
+          <!-- qui dentro creerò una card per i dettagli del SINGOLO evento -->
         </div>
       </div>
     </main>
@@ -80,6 +79,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/details.js"></script>
   </body>
 </html>

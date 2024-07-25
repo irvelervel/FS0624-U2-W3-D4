@@ -21,27 +21,46 @@ const getEvents = function () {
     })
     .then((arrayOfEvents) => {
       console.log('EVENTI A DB', arrayOfEvents)
-      // mi lascio come riferimento il risultato della card
-      //     <div class="col">
-      //     <div class="card">
-      //       <img
-      //         src="https://uninuoro.it/wp-content/uploads/2018/08/aditya-chinchure-494048-unsplash.jpg"
-      //         class="card-img-top"
-      //         alt="event pic"
-      //       />
-      //       <div class="card-body text-center">
-      //         <h5 class="card-title">Titolo dell'evento</h5>
-      //         <p class="card-text">Descrizione</p>
-      //         <p class="card-text">Prezzo</p>
-      //         <a href="#" class="btn btn-primary w-100">COMPRA!</a>
-      //       </div>
-      //     </div>
-      //   </div>
+
+      // for(let i=0; i<arrayOfEvents.length; i++){
+      //     arrayOfEvents[i]
+      // }
+
+      arrayOfEvents.forEach((concert) => {
+        // per ogni concert dobbiamo creare una col e appenderla
+        // alla row già esistente
+        const newEventCol = `
+            <div class="col">
+                <div class="card">
+                    <img
+                        src="https://uninuoro.it/wp-content/uploads/2018/08/aditya-chinchure-494048-unsplash.jpg"
+                        class="card-img-top"
+                        alt="event pic"
+                    />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${concert.name}</h5>
+                        <p class="card-text">${concert.description}</p>
+                        <p class="card-text">${concert.time}</p>
+                        <a href="./details.html?eventId=${concert._id}" class="btn btn-primary w-100">Vai ai dettagli</a>
+                    </div>
+                </div>
+            </div>
+            `
+        // la card è STATICA al momento, sarà uguale per tutti i concerti
+        // selezioniamo la row già presente
+        const eventsRow = document.getElementById('events-row')
+        eventsRow.innerHTML = eventsRow.innerHTML + newEventCol
+        // eventsRow.innerHTML += newEventCol
+      })
     })
     .catch((error) => {
       // non c'è internet, oppure il server proprio non esiste!
       console.log('ERRORE!', error)
     })
 }
+
+// const buy = function (e) {
+//   console.log(e.target)
+// }
 
 getEvents()
